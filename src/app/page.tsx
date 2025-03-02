@@ -1,6 +1,17 @@
+import { SignedIn, SignedOut, SignOutButton, SignUpButton, UserButton } from "@clerk/nextjs"
+
 const Home = () => {
   return (
-    <div>aczxzxz</div>
+    <>
+    <SignedOut>
+      <SignUpButton/>
+    </SignedOut>
+    <SignedIn>
+      <SignOutButton></SignOutButton>
+    </SignedIn>
+
+    <UserButton></UserButton>
+    </>
   )
 }
 
