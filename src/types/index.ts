@@ -40,6 +40,7 @@ export interface ExecutionResult {
 
 export interface CodeEditorState {
   language: string;
+  input: string;
   output: string;
   isRunning: boolean;
   error: string | null;
@@ -50,6 +51,7 @@ export interface CodeEditorState {
 
   setEditor: (editor: monaco.editor.IStandaloneCodeEditor) => void;
   getCode: () => string;
+  setInput: (val: string) => void;
   setLanguage: (language: string) => void;
   setTheme: (theme: string) => void;
   setFontSize: (fontSize: number) => void;

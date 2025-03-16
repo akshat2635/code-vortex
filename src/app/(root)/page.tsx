@@ -1,5 +1,6 @@
 import EditorPanel from "./_components/EditorPanel";
 import Header from "./_components/Header"
+import InputPanel from "./_components/InputPanel";
 import OutputPanel from "./_components/OutputPanel";
 
 export default function Home() {
@@ -10,7 +11,11 @@ export default function Home() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <EditorPanel/>
-          <OutputPanel/>
+          <div className="grid grid-rows-2 gap-4">
+            <InputPanel/>
+            <OutputPanel/>
+
+          </div>
         </div>
       </div>
     </div>

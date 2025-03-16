@@ -2,8 +2,6 @@ import { LANGUAGE_CONFIG } from "@/app/(root)/_constants";
 import { CodeEditorState } from "@/types";
 import { create } from "zustand";
 import * as monaco from 'monaco-editor';
-import { version } from "os";
-import { exec } from "child_process";
 
 const getInitialState=()=>{
     if(typeof window === 'undefined'){
@@ -29,6 +27,7 @@ export const useCodeEditorStore = create<CodeEditorState>((set,get)=>{
     const initialState = getInitialState();
     return {
         ...initialState,
+        input: '',
         output: '',
         isRunning: false,
         error: null,
@@ -47,6 +46,7 @@ export const useCodeEditorStore = create<CodeEditorState>((set,get)=>{
             localStorage.setItem('editor-theme', theme);
             set({theme});
         },
+        setInput: (input: string) => set({input}),
         setFontSize: (fontSize: number) => {
             localStorage.setItem('editor-fontSize', fontSize.toString());
             set({fontSize});
@@ -59,8 +59,9 @@ export const useCodeEditorStore = create<CodeEditorState>((set,get)=>{
             set({language, output: '', error: null, executionResult: null});
         },
         runCode: async ()=>{
-            const {language, getCode}=get();
+            const {language, getCode,input}=get();
             const code=getCode();
+            console.log(code);
             if(!code){
                 set({error: 'Code is empty!'});
                 return;
@@ -78,6 +79,7 @@ export const useCodeEditorStore = create<CodeEditorState>((set,get)=>{
                         language: runtime.language,
                         version: runtime.version,
                         files : [{content: code}],
+                        stdin: input
                     })
                 });
 

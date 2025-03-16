@@ -107,10 +107,9 @@ const EditorPanel = () => {
             </motion.button>
           </div>
         </div>
-        <div className="relative group rounded-xl overflow-hidden ring-1 ring-white/[0.05]">
+        <div className="relative group rounded-xl overflow-hidden h-[300px] lg:h-[600px] ring-1 ring-white/[0.05]">
           {clerk.loaded ? (
             <Editor
-              height="600px"
               language={LANGUAGE_CONFIG[language].monacoLanguage}
               theme={theme}
               onChange={handleEditorChange}
