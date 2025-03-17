@@ -9,6 +9,7 @@ import { Editor } from "@monaco-editor/react";
 import useMounted from "@/hooks/useMounted";
 import { useClerk } from "@clerk/nextjs";
 import { EditorPanelSkeleton } from "./EditorPanelSkeleton";
+import ShareSnippetDialog from "./ShareSnippetDialog";
 
 const EditorPanel = () => {
   const clerk = useClerk();
@@ -107,7 +108,7 @@ const EditorPanel = () => {
             </motion.button>
           </div>
         </div>
-        <div className="relative group rounded-xl overflow-hidden h-[300px] lg:h-[600px] ring-1 ring-white/[0.05]">
+        <div className="relative group rounded-xl overflow-hidden h-[250px] lg:h-[500px] ring-1 ring-white/[0.05]">
           {clerk.loaded ? (
             <Editor
               language={LANGUAGE_CONFIG[language].monacoLanguage}
@@ -140,6 +141,7 @@ const EditorPanel = () => {
           )}
         </div>
       </div>
+      {isShareOpen? <ShareSnippetDialog onClose={()=>setIsShareOpen(false)} />:<></>}
     </div>
   );
 };

@@ -7,13 +7,13 @@ const getInitialState=()=>{
     if(typeof window === 'undefined'){
         return {
             language: 'javascript',
-            fontSize: 17,
+            fontSize: 14,
             theme: 'vs-dark',
         }
     }
 
     const language = localStorage.getItem('editor-language') || 'javascript';
-    const fontSize = localStorage.getItem('editor-fontSize') || '17';
+    const fontSize = localStorage.getItem('editor-fontSize') || '14';
     const theme = localStorage.getItem('editor-theme') || 'vs-dark';
 
     return {

@@ -71,7 +71,7 @@ function InputPanel() {
           onChange={(e) => setInput(e.target.value)}
           placeholder="Enter your program input here..."
           className="w-full bg-[#1e1e2e]/50 backdrop-blur-sm border border-[#313244] 
-            rounded-xl p-4 h-[130px] lg:h-[260px] overflow-auto font-mono text-sm text-gray-300 
+            rounded-xl p-4 h-[100px] lg:h-[200px] overflow-auto font-mono text-sm text-gray-300 
             resize-none focus:outline-none focus:ring-1 focus:ring-blue-500/50"
         />
       </div>

@@ -36,7 +36,6 @@ async function Header() {
                 Interactive Code Editor
               </span>
             </div>
-
           </Link>
           {/* Navigation */}
           <nav className="flex items-center space-x-1">
@@ -83,11 +82,10 @@ async function Header() {
             <RunButton />
           </SignedIn>
 
-          <div className="pl-3 border-l border-gray-800">
+          <div className="pl-3 border-l border-gray-800 flex flex-col items-center">
             <HeaderProfileBtn />
           </div>
         </div>
-
       </div>
     </div>
   );
