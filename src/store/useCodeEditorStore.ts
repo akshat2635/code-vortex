@@ -87,29 +87,41 @@ export const useCodeEditorStore = create<CodeEditorState>((set,get)=>{
                 console.log(data);
 
                 if(data.message){
-                    set({error: data.message, executionResult: {code, output: "", error:data.message}});
+                    set({error: data.message, executionResult: {code,input:"", output: "", error:data.message}});
                     return;
                 }
 
                 if(data.compile && data.compile.code !==0){
                     const error = data.compile.stderr || data.compile.output;
-                    set({error, executionResult: {code, output: "", error}});
+                    set({error, executionResult: {code,input:"", output: "", error}});
                     return;
                 }
 
-                if(data.run && data.run.code !==0){
-                    const error = data.run.stderr || data.run.output;
-                    set({error, executionResult: {code, output: "", error}});
-                    return;
+                if (data.run && data.run.code !== 0) {
+                  const error = data.run.stderr || data.run.output;
+                  set({
+                    error,
+                    executionResult: { code, input: "", output: "", error },
+                  });
+                  return;
                 }
 
                 const output = data.run.output;
-                set({output:output.trim(),error:null, executionResult: {code, output:output.trim(), error: null}});
+                set({
+                  output: output.trim(),
+                  error: null,
+                  executionResult: {
+                    code,
+                    input: input,
+                    output: output.trim(),
+                    error: null,
+                  },
+                });
 
 
             } catch (error) {
                 console.log(error);
-                set({error: "Error running the code", executionResult: {code, output: "", error: "Error running the code"}});
+                set({error: "Error running the code", executionResult: {code,input:"", output: "", error: "Error running the code"}});
             } finally{
                 set({isRunning: false});
             }

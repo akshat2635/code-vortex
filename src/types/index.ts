@@ -34,6 +34,7 @@ export interface ExecuteCodeResponse {
 
 export interface ExecutionResult {
   code: string;
+  input: string;
   output: string;
   error: string | null;
 }

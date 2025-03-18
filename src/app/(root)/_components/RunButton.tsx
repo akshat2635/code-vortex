@@ -17,10 +17,11 @@ function RunButton() {
     const result= getExecutionResult();
     if(user && result){
         await saveExecution({
-            language,
-            code: result.code,
-            output: result.output || undefined,
-            error: result.error || undefined,
+          language,
+          code: result.code,
+          input: result.input || undefined,
+          output: result.output || undefined,
+          error: result.error || undefined,
         });
     };
   }
