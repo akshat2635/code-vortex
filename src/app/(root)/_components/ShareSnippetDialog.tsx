@@ -21,6 +21,7 @@ const ShareSnippetDialog = ({onClose}:{onClose: ()=>void}) => {
             setTitle("");
             toast.success("Snippet shared successfully");
         } catch (error) {
+            console.error(error);
             toast.error("Failed to share snippet");
         } finally {
             setIsSharing(false);
