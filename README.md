@@ -77,9 +77,8 @@ For questions or suggestions, feel free to reach out:
 
 - **Name**: Akshat
 - **GitHub**: [akshat2635](https://github.com/akshat2635)
-- **Email**: [your-email@example.com](mailto:your-email@example.com)
+- **Email**: [akshatjain2635@gmail.com](mailto:akshatjain2635@gmail.com)
 
 ---
 
-*Note: Replace `[your-email@example.com](mailto:your-email@example.com)` with your actual email address.*
 
