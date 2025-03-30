@@ -23,7 +23,7 @@ export const syncUser = mutation({
         userId,
         email,
         name,
-        isPro: false,
+        isPro: true,
       });
       console.log(`Created new user with ID ${userId}`);
       return newUserId;
